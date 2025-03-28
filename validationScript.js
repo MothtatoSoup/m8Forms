@@ -4,7 +4,7 @@ const subButt = document.getElementById("button")
       // Retrieve the input field value
 const userInput = document.getElementById("inputField").value
       // Regular expression pattern for alphanumeric input
-let e = /ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890/
+userInput.setAttribute("pattern","[a-zA-Z0-9]")
       // Check if the input value matches the pattern
 subButt.addEventListener("click", validPattern)
 function validPattern(){
@@ -15,3 +15,4 @@ function validPattern(){
     userInput.setCustomValidity("")
   }
 }
+
