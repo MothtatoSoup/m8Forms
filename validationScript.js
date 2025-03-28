@@ -4,15 +4,14 @@ const subButt = document.getElementById("button")
       // Retrieve the input field value
 const userInput = document.getElementById("inputField").value
       // Regular expression pattern for alphanumeric input
-userInput.setAttribute("pattern","[a-zA-Z0-9]")
       // Check if the input value matches the pattern
 subButt.addEventListener("click", validPattern)
 function validPattern(){
   // Valid input: display confirmation and submit the form
-  if(userInput.validity.patternMismatch){
-    userInput.setCustomValidity("Please enter an alphanumeric value")
+  if((/^[a-z0-9A-Z]+$/.test(userInput))){
+    userInput.setCustomValidity("yippes")
+    console.log(userInput)
   }else{ // Invalid input: display error message 
-    userInput.setCustomValidity("")
+    userInput.setCustomValidity("Please enter an alphanumeric value")
   }
 }
-
