@@ -1,17 +1,21 @@
     // JavaScript code for form validation
 	// Prevent form from submitting
-const subButt = document.getElementById("button")
+const form = document.getElementById("myForm")
       // Retrieve the input field value
-const userInput = document.getElementById("inputField").value
+
       // Regular expression pattern for alphanumeric input
       // Check if the input value matches the pattern
-subButt.addEventListener("click", validPattern)
+form.addEventListener("click", validPattern)
 function validPattern(){
+  const userInput = document.getElementById("inputField")
   // Valid input: display confirmation and submit the form
-  if((/^[a-z0-9A-Z]+$/.test(userInput))){
+  if((/^[a-z0-9A-Z]+$/.test(userInput.value))){
+
     userInput.setCustomValidity("yippes")
     console.log(userInput)
   }else{ // Invalid input: display error message 
-    userInput.setCustomValidity("Please enter an alphanumeric value")
+    userInput.setCustomValidity("Please enter an alphanumeric value");
   }
+  event.preventDefault
+
 }
